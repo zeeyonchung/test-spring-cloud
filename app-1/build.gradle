@@ -36,6 +36,7 @@ dependencies {
 	implementation('org.projectlombok:lombok')
 	implementation('org.springframework.cloud:spring-cloud-starter-oauth2')
 	implementation('org.springframework.boot:spring-boot-starter-security')
+	implementation('mysql:mysql-connector-java:5.1.41')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 

@@ -21,8 +21,9 @@ public class OrderService {
     @Autowired
     RestTemplate restTemplate;
 
+    // https://github.com/Netflix/Hystrix/wiki/configuration
     @HystrixCommand(fallbackMethod="fallbackGetOrdersByUser",
-            threadPoolKey = "licenseByOrgThreadPool",
+            threadPoolKey = "orderByOrgThreadPool",
             threadPoolProperties =
                     {@HystrixProperty(name = "coreSize",value="30"),
                             @HystrixProperty(name="maxQueueSize", value="10"),

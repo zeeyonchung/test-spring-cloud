@@ -27,9 +27,9 @@ public class AppApplication {
 			@Override
 			public void configure(HttpSecurity http) throws Exception {
 				http.headers().frameOptions().disable();
-				http.authorizeRequests()
+				http.anonymous().and().authorizeRequests()
 						.antMatchers("/**").permitAll()
-						.antMatchers("/member", "/member/**").access("#oauth2.hasScope('read')")
+						.antMatchers("/orders", "/orders/**").access("#oauth2.hasScope('read')")
 						.anyRequest().authenticated();
 			}
 		};
